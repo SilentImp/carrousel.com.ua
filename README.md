@@ -13,6 +13,7 @@ Frontend development for [Carrousel][1].
 ### Automatization
 
 * [gulp][5]
+* [bower][13]
 
 ## Contacts
 
@@ -43,3 +44,4 @@ Site: [http://frontender.info/][12]
 [10]: http://ua.linkedin.com/pub/anton-nemtsev/3/b1/592/
 [11]: http://twitter.com/silentimp
 [12]: http://frontender.info/
+[13]: http://bower.io/
