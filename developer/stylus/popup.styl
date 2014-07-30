@@ -1,0 +1,97 @@
+@require 'mixins'
+
+.lightbox
+  position fixed
+  top 0
+  left 0
+  bottom 0
+  right 0
+  background-color #fff
+  background-color rgba(255, 255, 255, .75)
+  background-color rgba(0, 0, 0, .5)
+  z-index 2000
+  transition opacity .25s
+   
+.popup
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  margin auto
+  z-index 2001
+  width 529px
+  height 247px
+  border 1px solid #000
+  padding 37px 50px 0
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+  text-align center
+  transition opacity .25s
+  .popup-title
+    font-family "GothamPro Bold", Helvetica, Arial, sans-serif
+    font-size 24px
+    line-height 36px
+    text-transform uppercase
+    margin-bottom 30px
+    color #040707 
+    letter-spacing 6px 
+  .popup-message
+    font-family "PFDinTextPro", Helvetica, Arial, sans-serif
+    font-size 12px
+    line-height 15px
+    color #646464
+  .popup-navigation
+    margin 33px 0 0
+    a
+      margin 0 20px
+      height 31px
+      line-height 31px
+      background-color #000
+      color #FFF
+      font-family "Minion Pro", Georgia, serif
+      font-size 13px
+      border-radius 16px
+      padding 0 10px
+      width 50px
+      box-sizing border-box
+      display inline-block
+      text-decoration none
+      border 1px solid #000
+      &:hover
+        background-color #EBEBEB
+        color #000  
+      &:active 
+        background-color #fff    
+      &.cancel
+        position absolute
+        margin 0
+        top -21px
+        right -21px
+        width 42px
+        height 42px
+        border-radius 100%
+        padding 0
+        text-align center
+        &:before
+          icon()
+          content '\e813'
+          line-height 40px
+          font-size 20px
+  &:after
+    content "."
+    display block
+    font-size 0
+    overflow hidden
+    text-indent -9999px
+    line-height 0
+    background #FFF
+    position absolute
+    top 9px
+    left 9px
+    right 9px
+    bottom 9px
+    z-index -1
+    pointer-events none
+  

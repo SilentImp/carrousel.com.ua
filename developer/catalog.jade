@@ -1,0 +1,134 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/styles.css")
+    title Собери коробочку сам | Каталог | Carrousel
+  
+  body
+    
+    a.disabled.scroll-to-the-box(href="#box") К коробке
+
+    header
+      a(href="/")
+        h1.logotype Carrousel
+      nav
+        a.catalog.selected(href="catalog.html") Каталог
+        a.brand(href="about.html") О бренде
+        a.contacts(href="contacts.html") Контакты
+        a.card(href="busket.html") Корзина
+          b (хочу сладкого)
+        a.fb(href="#") facebook
+
+    .main
+      
+      section.catalog.custom
+        header
+          nav.type-navigation
+            a.icon-macaron.macaron(href="catalog.html") Макаруны
+            a.icon-zephyr.zephyr(href="catalog-candy.html") Зефир
+            a.icon-candy.candy.selected(href="catalog-candy.html") Конфеты
+            a.icon-marmalade.jujube(href="catalog-candy.html") Мармелад
+          a.our-box.icon-thumbs_up(href="catalog-box.html") Мы собрали коробочки для тебя
+          a.your-box.icon-hand.selected(href="catalog.html") Собери коробочку сам
+          p.abstract О происхождении сладости идут споры; Larousse Gastronomique упоминает его в 791 году как создание одного из монастырей, другие источники ссылаются на то, что лакомство привезли итальянские повара, приехавшие с Екатериной Медичи после её заключения брака с Генрихом III.
+        
+        section.box-wrapper#box
+          .box
+            h2.box-title Собери свою коробку
+            p.box-text О происхождении сладости идут споры; Larousse Gastronomique упоминает его в 791 году как создание одного из монастырей, другие источники ссылаются на то, что лакомство привезли итальянские повара, приехавшие с Екатериной Медичи после её заключения брака с Генрихом III.
+            nav.box-type
+              a.icon-box_small.small(href="#", data-target="small-box") Маленькая коробка
+              a.icon-box_small.selected.big(href="#", data-target="big-box") Большая коробка
+
+            #small-box.box-container(data-url="images/box/big-macaroon.png", data-summ="0")
+              .icons.small
+                - for (var i = 0; i < 8; ++i) {
+                  .icon
+                    .hint
+                      .wrapper Пироженка
+                    img(src="images/box/big-macaroon.png", alt="Макарун", data-id="null")
+                - }
+              footer
+                p.price Стоимость коробки - 
+                  span
+                    b 0 
+                    |  грн
+                a.icon-shopping_bag.order.disabled(href="#") В корзину
+            #big-box.selected.box-container(data-url="images/box/big-macaroon.png", data-summ="0")
+              .icons.big
+                - for (var i = 0; i < 18; ++i) {
+                  .icon
+                    .hint
+                      .wrapper Пироженка
+                    img(src="images/box/big-macaroon.png", alt="Макарун", data-id="null")
+                - }
+              footer
+                p.price Стоимость коробки - 
+                  span
+                    b 0 
+                    |  грн
+                a.icon-shopping_bag.order.disabled(href="#") В корзину
+        
+        section.not-masonry.items-list#catalog-items
+            
+          - var names = ['Pistachio', 'Raspbery']
+          - for (var i = 0; i < 18; ++i) {
+            article.item(data-hash="open-"+i, data-price="24", data-top-ico="images/box/macaron-ico-top-"+(i%2+1)+".png", data-ico="images/box/macaron-ico-"+(i%2+1)+".png", data-id=i)
+              .wrapper
+                h3.item-title= names[i%2]
+                p.item-abstract В 1830-е макаруны подавали с ликёром, джемом и специями, а в современном виде они появились в кондитерской Ladurée.
+                p.item-full О происхождении сладости идут споры; Larousse Gastronomique упоминает его в 791 году как создание одного из монастырей, другие источники ссылаются на то, что лакомство привезли итальянские повара, приехавшие с Екатериной Медичи после её заключения брака с Генрихом III.
+                p.price 24 гривны за штучку
+              img.small(src="images/box/macaron-"+(i%2+1)+".png", alt="Пироженка")
+              img.big(src="images/box/macaron-big-"+(i%2+1)+".png", alt="Пироженка")
+              nav
+                a.icon-info.details(href="#open-"+i) Детальнее
+                a.icon-shopping_bag.buy(href="#") В коробку
+          - }
+
+
+        nav.paginator
+          a.prev(href="#")
+          a.selected(href="#") 1
+          a(href="#") 2
+          a(href="#") 3
+          a(href="#") 4
+          a(href="#") 5
+          a.next(href="#")
+
+      footer
+        .wrapper
+          nav
+            a(href="#") Каталог
+            a(href="#") О бренде
+            a.card(href="#") Корзина 
+          
+          address
+            p.tel тел. 
+              a(href="tel: +380445160045") (044) 516 00 45
+            p.tel моб. 
+              a(href="tel: +380671348798") 067 134 87 98
+            p.email
+              a(href="mailto: yamy@carusel.com.ua") yamy@carusel.com.ua
+            p.adr г. Киев ул. Уличная 23, оф. 234
+            section.map#footer-map(data-lng="50.450097", data-lat="30.523397")
+          
+          .social
+            | Давай с нами — 
+            a.fb(href="#")
+            a.tw(href="#")
+          
+          a(href="http://territory.com.ua/")
+            p.developed-by CBT
+
+          p.copyright © 2010-2013
+            br
+            | Кондитерский дом «карусель»
+
+
+
+    script(src="http://api-maps.yandex.ru/2.1/?lang=ru_RU")
+    script(src="js/requirejs/require.js", data-main="js/carrousel.js")

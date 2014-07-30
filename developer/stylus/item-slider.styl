@@ -1,0 +1,69 @@
+@require 'mixins'
+@require 'item'
+
+.item-slider
+  width 1000px
+  margin 64px auto
+  min-height 330px
+  position relative
+  font-size 0
+  line-height 0
+  white-space nowrap
+  .item-slider-wrapper
+    display block
+    width 1000px
+    height 330px
+    line-height 330px
+    overflow hidden
+    item()
+    .item
+      margin-left 50px
+      &:first-child
+        margin-left 0
+  .slider-navigation
+    position absolute
+    top 0
+    left 0
+    right 0
+    .slider-navigation-next,
+    .slider-navigation-prev
+      position absolute
+      width 55px
+      height 100px
+      top 90px
+      opacity 0.5
+      transition opacity .5s
+      &:hover
+        opacity 1
+    .slider-navigation-next
+      left 100%
+      margin-left 50px 
+      background url("../svg/next-g.svg") 50% 50% no-repeat
+    .slider-navigation-prev
+      right 100%
+      margin-right 50px
+      background url("../svg/prev-g.svg") 50% 50% no-repeat
+      
+
+@media (max-width: 1200px)
+  .item-slider
+    width 650px
+    .item-slider-wrapper
+      width 650px 
+      
+@media (max-width: 880px)
+  .item-slider
+    width 300px
+    .item-slider-wrapper
+      width 300px 
+      
+@media (max-width: 500px)
+  .item-slider
+    .slider-navigation
+      z-index 10
+      .slider-navigation-next
+        left auto
+        right 0
+      .slider-navigation-prev
+        left 0
+        right auto

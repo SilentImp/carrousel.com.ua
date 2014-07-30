@@ -1,0 +1,224 @@
+@require 'mixins'
+
+body
+  a.scroll-to-the-box
+    text-decoration none
+    font 12px/36px GothamPro, Helvetica, Arial, sans-serif;
+    position fixed
+    left 50%
+    margin-left 520px
+    margin-top -18px
+    bottom 50%
+    width 100px
+    color: #000
+    z-index 100
+    text-align left
+    opacity 1
+    transition opacity .25s
+    &.disabled
+      opacity 0
+      pointer-events none
+    &:before
+      icon()
+      text-shadow none
+      font-size 10px
+      color #fff
+      overflow hidden
+      text-align center
+      border-radius 100%
+      display inline-block
+      margin-right 5px
+      height 18px
+      width 18px
+      line-height 18px
+      background-color $green
+      background-position 50% 50%
+      vertical-align middle
+      background-repeat no-repeat 
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      content '\e816'
+      color #fff
+
+body>header
+  max-width 1000px
+  min-height 106px
+  margin 0 auto 
+  padding 44px 0 0 
+  background-color #FFF 
+  position relative
+  font-family "GothamPro", Helvetica, Arial, sans-serif
+  font-size 0
+  line-height 0
+          
+  .logotype
+    z-index 2
+    width 32%
+    position absolute
+    top 0
+    bottom 0 
+    right 0
+    left 0
+    margin auto
+    background #FFF url("../svg/logotype.svg") 50% 50% no-repeat
+    background-size 71.25% auto
+    overflow hidden
+    text-indent -9999px
+  nav
+    max-width 820px
+    width 82%
+    margin auto
+    background: linear-gradient(to right, rgba(32,189,169,1) 0%,rgba(32,189,169,1) 20%,rgba(32,189,169,0) 20%,rgba(32,189,169,0) 50%,rgba(32,189,169,1) 50%,rgba(32,189,169,1) 70%,rgba(32,189,169,0) 70%,rgba(32,189,169,0) 100%)
+    background-position 50% 100%
+    background-size 10px 2px
+    background-repeat repeat-x
+    position static
+    clearit()
+    a
+      z-index 10
+      white-space nowrap
+      line-height 36px
+      font-size 12px
+      color #000
+      text-decoration none
+      text-align center
+      
+      position relative
+      float left
+      display inline-block
+      left 100%
+      
+      width 8%
+
+      &.catalog
+        width auto
+        margin-left -100%
+        text-align left
+        
+      &.brand
+        margin-left -86%
+        
+      &.contacts
+        margin-left -26%
+        
+      &.card
+        width auto
+        float right
+        left 0
+        &:before
+          icon()
+          content '\e80c'
+          color $green           
+          width 18px
+          height 18px
+          display inline-block
+          margin-right 5px
+      
+      &.selected
+        pointer-events none
+        cursor default
+
+      &:hover,
+      &.selected
+        &:after
+          content "."
+          font-size 0
+          line-height 0
+          height 0
+          width 0
+          overflow hidden
+          text-indent -9999px
+          border-width 0 6px 6px
+          border-style none solid solid
+          border-color transparent transparent #000
+          position absolute
+          bottom 0
+          left 0
+          right 0
+          margin auto  
+          
+      &.fb
+        float none
+        position absolute
+        width 100px
+        left 100%
+        padding-left 20px
+        text-align left
+        &:hover
+          text-decoration underline
+          &:after
+            display none
+        &:before
+          icon()
+          content '\e810'
+          width 18px
+          height 18px
+          line-height 18px
+          margin-right 5px
+          display inline-block
+          background $green
+          vertical-align middle
+          border-radius 100%
+          position relative
+          color #FFF 
+          
+      b
+        position absolute
+        font-size 10px
+        line-height 12px
+        white-space nowrap
+        color #C0C0C0
+        bottom 24px
+        left 90%
+
+@media (max-width: 820px)
+  body
+    a.scroll-to-the-box
+      display none
+  body>header
+    .logotype
+      position relative
+      width auto
+      height 36px
+      background-size contain 
+    nav
+      background none
+      height auto
+      // overflow hidden
+      position relative
+      margin-top 20px
+      text-align center
+      a,
+      a.fb,
+      a.contacts,
+      a.brand,
+      a.catalog,
+      a.card
+        width auto
+        text-align center
+        display inline-block
+        float none
+        margin 0 10px
+        left 0
+        right 0
+        position relative
+        b
+          position absolute
+          left auto
+          right auto
+          bottom auto
+          top 0
+          vertical-align super
+          
+        
+
+@media (max-width: 1250px)
+  body
+    a.scroll-to-the-box
+      display none
+  body>header
+    nav
+      a.fb
+        display none

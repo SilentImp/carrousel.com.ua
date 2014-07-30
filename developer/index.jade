@@ -1,0 +1,92 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="author", content="Anton Nemtsev, @silentimp, skype: ravencry")
+    link(rel="stylesheet", href="css/styles.css")
+    title Каталог | Carrousel
+  body
+    
+    header
+      a(href="/")
+        h1.logotype Carrousel
+      nav
+        a.catalog(href="catalog.html") Каталог
+        a.brand(href="about.html") О бренде
+        a.contacts(href="contacts.html") Контакты
+        a.card(href="busket.html") Корзина
+          b (хочу сладкого)
+        a.fb(href="#") facebook
+
+    .main
+      
+      section.window
+        section.message
+          h2.message-title девять жизней
+          p.message-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. 
+          img(src="images/goods/window.png", alt="Товар на ветрине")
+          a.buy(href="#") В корзину
+
+      section.goods-slider
+        h2.goods-slider-title Наши сладости
+          a.catalog(href="catalog.html") Смотреть каталог
+        p.goods-slider-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. 
+        
+        .item-slider
+          .item-slider-wrapper
+            - var names = ['Orgy', 'K.B.', 'Королева', 'Popo Bawa']
+            - for (var i = 0; i < 18; ++i) {
+              article.item(data-hash="open-"+i, data-price="24", data-ico="images/box/macaroon-"+(i%4+1)+".jpg", data-id=i)
+                .wrapper
+                  h3.item-title= names[i%4]
+                    b= " — "+i
+                  p.item-abstract Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. 
+                img.small(src="images/goods/item-"+(i%3+1)+".jpg", alt="Пироженка")
+                nav
+                  a.icon-info.details(href="catalog.html#open-"+i) Детальнее
+                  a.icon-shopping_bag.buy(href="#") В коробку
+            - }
+          nav.slider-navigation
+            a.slider-navigation-next(href="#")
+            a.slider-navigation-prev(href="#")
+
+
+      section.story
+        section.message
+          h2.message-title История одной болезни
+          p.message-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Maecenas accumsan id orci at ornare. 
+          a.details(href="#") Детальнее
+
+      footer
+        .wrapper
+          nav
+            a(href="#") Каталог
+            a(href="#") О бренде
+            a.card(href="#") Корзина 
+          
+          address
+            p.tel тел. 
+              a(href="tel: +380445160045") (044) 516 00 45
+            p.tel моб. 
+              a(href="tel: +380671348798") 067 134 87 98
+            p.email
+              a(href="mailto: yamy@carusel.com.ua") yamy@carusel.com.ua
+            p.adr г. Киев ул. Уличная 23, оф. 234
+            section.map#footer-map(data-lng="50.450097", data-lat="30.523397")
+          
+          .social
+            | Давай с нами – 
+            a.fb(href="#")
+            a.tw(href="#")
+          
+          a(href="http://territory.com.ua/")
+            p.developed-by CBT
+
+          p.copyright © 2010-2013
+            br
+            | Кондитерский дом «карусель»
+
+    script(src="http://api-maps.yandex.ru/2.1/?lang=ru_RU")
+    script(src="js/requirejs/require.js", data-main="js/carrousel.js")

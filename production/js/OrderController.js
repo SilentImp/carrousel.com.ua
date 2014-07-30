@@ -1,0 +1,1 @@
+define(["jquery.maskedinput/jquery.maskedinput.min"],function(){var t;return t=function(){function t(){this.widget=$(".main>.order"),0!==this.widget.length&&(this.itype="click",$("html").hasClass("touch")&&(this.itype="touchstart"),this.widget.find("input.tel").mask("+380 99 999 99 99"))}return t}()});

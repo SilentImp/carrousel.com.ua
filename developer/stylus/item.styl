@@ -1,0 +1,263 @@
+@require 'mixins'
+
+item()
+  &.item-slider-wrapper .item,
+  &.masonry .item
+    display inline-block
+    width 298px
+    height 298px
+    position relative
+    border 1px solid #000
+    margin-bottom 100px
+    text-align center
+    white-space normal
+    line-height 0
+    zoom 1
+    transform translateZ(0)
+    &.full-view
+      width 648px
+      height 698px
+      nav
+        position static
+        .buy
+          position absolute
+          left 0
+          right 0
+          bottom 45px
+          margin auto
+          z-index 10
+          width 120px
+          white-space nowrap
+          box-sizing border-box
+          sqr-button()
+        .details
+          font-size 0
+          width 30px
+          height 30px
+          position absolute
+          top -1px
+          right -1px
+          color #FFF 
+          background-color $green
+          z-index 6
+          border 1px solid #000
+          padding 0
+          overflow hidden
+          &:before
+            margin 0
+            text-align center
+            content '\e813'
+            font-size 12px
+            line-height 32px
+      .wrapper
+        position absolute
+        left 73px
+        right 73px
+        bottom 21px 
+        top auto
+        height 277px 
+        box-sizing border-box
+        border 1px solid #fff
+        z-index 10
+        padding 39px 59px 64px
+        &:after
+          content "."
+          display block
+          font-size 0
+          overflow hidden
+          text-indent -9999px
+          line-height 0
+          background #fff
+          position absolute
+          top 9px
+          left 9px
+          right 9px
+          bottom 9px
+          z-index -1
+          pointer-events none
+        .item-title
+          position relative
+          display block
+          top 0
+          left 0
+          bottom 0
+          right 0
+          margin-bottom 40px
+        .price
+          width auto
+          top 0
+          left 0
+          bottom 0
+          right 0
+          position relative 
+        .item-full
+          display block
+          font-family "PFDinTextPro", Helvetica, Arial, sans-serif
+          font-size 12px
+          line-height 15px
+          color #646464
+          max-height 75px
+          position relative
+          overflow hidden
+          text-overflow ellipsis
+
+      .item-abstract
+        display none
+      img.big
+        display block
+        width 648px
+        height 698px
+        margin auto
+        position absolute
+        z-index 5
+        left 0
+        top 0
+      img.small
+        display none
+    .wrapper
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      .item-title
+        position absolute
+        top 20px
+        left 20px
+        right 20px
+        text-transform uppercase
+        z-index 2
+        font-size 18px
+        line-height 24px
+        font-family "GothamPro Bold", Helvetica, Arial, sans-serif
+        letter-spacing 6px
+      .item-full
+        display none
+      .item-abstract
+        position absolute
+        bottom 18px
+        left 20px
+        right 20px
+        height 45px
+        width 238px
+        overflow hidden
+        line-height 15px
+        font-size 12px
+        color #646464  
+        font-family "PFDinTextPro", Helvetica, Arial, sans-serif
+        z-index 2
+      .price
+        text-align center
+        font-size 12px
+        line-height 24px
+        font-family "GothamPro Bold", Helvetica, Arial, sans-serif
+        color #000 
+        position absolute
+        bottom 63px
+        left 20px
+        right 20px
+        width 238px
+        z-index 2
+    img.big
+      display none
+    img.small
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      margin auto
+      width 100%
+      height 100%
+      pointer-events none
+      z-index 1
+    nav
+      position absolute
+      right -1px
+      top 100%
+      z-index 2
+      a
+        margin-left 13px
+        &.details
+          sqr-button()
+          padding-left 10px
+          &:before
+            font-size 18px
+            margin-right 9px
+            vertical-align middle
+            position relative
+            top -1px
+        &.buy
+          sqr-button-green()
+          padding-left 10px
+          translate opacity .25s
+          opacity 1
+          &.disabled
+            pointer-events none
+            opacity 0.5
+            cursor default
+          &:before
+            font-size 16px
+            margin-right 9px
+            vertical-align middle
+            position relative
+            top -1px
+            
+
+
+  &.not-masonry .item
+    display block
+    width 100%
+    position relative
+    padding 300px 25px 25px 
+    margin-bottom 45px
+    img.small
+      position absolute
+      top 0
+      left 0
+      right 0
+      z-index 1
+    img.big
+      display none
+    .item-title
+      font-size 18px
+      line-height 24px
+      font-family "GothamPro Bold", Helvetica, Arial, sans-serif
+      letter-spacing 6px
+      text-transform uppercase
+      position absolute
+      top 0
+      left 0
+      right 0
+      z-index 2
+    .item-abstract
+      display none
+    .item-full
+      margin-top -75px
+      line-height 15px
+      font-size 12px
+      color #646464  
+      font-family "PFDinTextPro", Helvetica, Arial, sans-serif
+      z-index 3
+      position relative
+      margin-bottom 15px
+    .price
+      position relative
+      text-align center
+      font-size 12px
+      line-height 24px
+      font-family "GothamPro Bold", Helvetica, Arial, sans-serif
+      color #000 
+      z-index 4
+      margin-bottom 15px
+    nav
+      position static
+      .buy
+        margin auto
+        z-index 10
+        width 120px
+        white-space nowrap
+        box-sizing border-box
+        sqr-button()
+      .details
+        display none

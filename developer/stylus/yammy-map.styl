@@ -1,0 +1,53 @@
+@require 'mixins'
+
+.yammy-map
+  padding-top 35px
+  .map
+    margin-top 28px
+    height 689px
+    width 100%
+  .yammy-map-title
+    white-space nowrap
+    z-index 2
+    position relative
+    max-width 1000px
+    margin auto 
+    background: linear-gradient(to right, rgba(32,189,169,1) 0%,rgba(32,189,169,1) 20%,rgba(32,189,169,0) 20%,rgba(32,189,169,0) 50%,rgba(32,189,169,1) 50%,rgba(32,189,169,1) 70%,rgba(32,189,169,0) 70%,rgba(32,189,169,0) 100%)
+    background-position 0 100%
+    background-size 10px 2px
+    background-repeat repeat-x
+    text-align center
+    line-height 48px
+    font-size 40px
+    padding 16px 0 
+    text-transform uppercase
+    margin 0 auto 15px
+    letter-spacing 6px 
+    font-family "GothamPro Bold", Helvetica, Arial, sans-serif
+  .yammy-map-text
+    z-index 2
+    position relative
+    text-align center
+    font-family "PFDinTextPro", Helvetica, Arial, sans-serif
+    font-size 12px
+    line-height 15px
+    color #646464
+    width 280px
+    margin auto
+    
+@media (max-width: 680px)
+  section.yammy-map
+    background none
+    height auto
+    .map
+      max-height 80vh
+    .yammy-map-title
+      text-align left
+      white-space normal
+      width auto
+      background none
+      padding 0 20px 
+    .yammy-map-text
+      text-align left
+      padding 0 20px 
+      width auto

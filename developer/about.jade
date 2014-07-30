@@ -1,0 +1,76 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="author", content="Anton Nemtsev, @silentimp, skype: ravencry")
+    link(rel="stylesheet", href="css/styles.css")
+    title Carrousel
+  body
+    
+    header
+      a(href="/")
+        h1.logotype Carrousel
+      nav
+        a.catalog.selected(href="catalog.html") Каталог
+        a.brand(href="about.html") О бренде
+        a.contacts(href="contacts.html") Контакты
+        a.card(href="busket.html") Корзина
+          b (хочу сладкого)
+        a.fb(href="#") facebook
+
+    .main
+      
+      section.goddness
+        section.message
+          h2.message-title Привет, я богиня кекса
+          p.message-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan 
+      
+      section.business
+        h2.business-title бизнесу
+        p.business-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. 
+        section.message.message-black
+          h2.message-title сладкий подарок
+          p.message-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. 
+          address Детальная информация по телефону - 
+            a.tel(href="tel: +380674532356") 
+              b (067) 453 23 56  
+        section.slide-show(data-slides="images/slides/slide-1.jpg,images/slides/slide-2.jpg,images/slides/slide-3.jpg")
+          .slide.current
+          .slide.hidden-next
+          nav.slide-show-nav
+            a.slide-show-nav-prev(href="#")
+            a.slide-show-nav-next(href="#")
+
+      footer
+        .wrapper
+          nav
+            a(href="#") Каталог
+            a(href="#") О бренде
+            a.card(href="#") Корзина 
+          
+          address
+            p.tel тел. 
+              a(href="tel: +380445160045") (044) 516 00 45
+            p.tel моб. 
+              a(href="tel: +380671348798") 067 134 87 98
+            p.email
+              a(href="mailto: yamy@carusel.com.ua") yamy@carusel.com.ua
+            p.adr г. Киев ул. Уличная 23, оф. 234
+            section.map#footer-map(data-lng="50.450097", data-lat="30.523397")
+          
+          .social
+            | Давай с нами – 
+            a.fb(href="#")
+            a.tw(href="#")
+          
+          a(href="http://territory.com.ua/")
+            p.developed-by CBT
+
+          p.copyright © 2010-2013
+            br
+            | Кондитерский дом «карусель»
+
+    script(src="http://api-maps.yandex.ru/2.1/?lang=ru_RU")
+    script(src="js/requirejs/require.js", data-main="js/carrousel.js")

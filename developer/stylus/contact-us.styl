@@ -1,0 +1,53 @@
+@require 'mixins'
+
+.ymaps-balloon__content 
+  .email
+    margin 15px 0 
+  a
+    color #000 
+    text-decoration none
+    &:hover
+      text-decoration underline
+
+.contact-us
+  height 569px
+  line-height 569px
+  text-align center
+  .message
+    position relative
+    display inline-block
+    vertical-align middle
+    width 666px
+    padding 60px 65px 60px
+    .message-title
+      margin-bottom 30px 
+    address
+      margin-top 0
+      color #000
+      p
+        line-height 15px
+      p.email
+        margin 14px 0 16px
+      a
+       color #000  
+
+@media (min-width: 681px)
+  section.contact-us
+    background url("../images/bg/goddness.jpg") 50% 50% no-repeat
+    background-size cover
+      
+@media (max-width: 680px)
+  section.contact-us
+    background none
+    height auto
+    line-height inherit
+    .message
+      width auto
+      padding 0 20px
+      border-style none
+      margin 20px 0 
+      text-align left
+      transform none
+      position static
+      &:after
+        display none

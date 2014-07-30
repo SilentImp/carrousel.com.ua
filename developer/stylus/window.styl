@@ -1,0 +1,70 @@
+@require 'mixins'
+
+.window
+  position relative
+  height 569px
+  line-height 569px
+  text-align center
+  .message
+    position relative
+    display inline-block
+    vertical-align middle
+    width 529px
+    // transform translate(-50%,-50%)
+    padding 38px 65px 34px
+    img
+      position absolute
+      right 365px
+      top -11px
+      display block
+      max-width none
+    .buy
+      round-button()
+      margin-top 32px
+      &:before
+        icon()
+        content '\e80b'
+        margin-right 5px
+
+@media (min-width: 681px)
+  section.window
+    min-height 569px
+    background url("../images/bg/girl.jpg") 50% 50% no-repeat
+    background-size cover
+    
+@media (max-width: 680px)
+  section.window
+    background none
+    height auto
+    line-height inherit 
+    .buy
+      display inline-block
+      position relative
+      left 0
+      right 0
+      bottom 0
+      top 0
+    .message
+      width auto
+      padding 0 20px
+      border-style none
+      margin 20px 0 
+      transform none
+      position static
+      text-align center
+      clearit()
+      .message-title
+        white-space normal
+        overflow hidden
+      .message-text
+        max-width 80%
+        float right
+        clear right
+        overflow hidden
+      img
+        max-width 20%
+        clear left
+        float left
+        display block
+        margin 0
+        position static

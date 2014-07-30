@@ -1,0 +1,124 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="author", content="Anton Nemtsev, @silentimp, skype: ravencry")
+    link(rel="stylesheet", href="css/styles.css")
+    title Корзина | Carrousel
+  body
+    
+    header
+      a(href="/")
+        h1.logotype Carrousel
+      nav
+        a.catalog(href="catalog.html") Каталог
+        a.brand(href="about.html") О бренде
+        a.contacts(href="contacts.html") Контакты
+        a.card.selected(href="busket.html") Корзина
+          b (хочу сладкого)
+        a.fb(href="#") facebook
+
+    .main
+      section.basket
+        header
+          .delivery.free.locked Доставка бесплатно!
+          .delivery.fee Стоимость доставки - 
+            span.delivery-price 50 грн
+            b  (мы делаем бесплатную доставку когда сумма вашего заказа превысит 300 грн)
+          .price Сумма заказа - 
+            span 
+              b 1032 
+              |  грн
+          nav
+            a.order(href="#") Оформить заказ
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. 
+
+        .items
+          - var names = ['Своя коробка', 'Название коробки', 'очень длинное название', 'коротыш']
+          - each val in [1, 2, 3, 4, 5, 6, 7]
+            .item(data-id=(val), data-count="1", data-price="32.5")
+              .preview
+                .photos
+                  .photo
+                    img(src="images/goods/preview-"+((val+1)%4+1)+".jpg", alt="Фотография кексика")
+                  .photo
+                    img(src="images/goods/preview-"+((val+2)%4+1)+".jpg", alt="Фотография кексика")
+                  .photo
+                    img(src="images/goods/preview-"+((val+3)%4+1)+".jpg", alt="Фотография кексика")
+                  .photo
+                    img(src="images/goods/preview-"+((val+4)%4+1)+".jpg", alt="Фотография кексика")
+                nav.preview-nav
+                  a.preview-prev(href="#")
+                  a.preview-next(href="#")
+              .details
+                h3.title= names[val%4]
+                .secondary
+                  p.list Название (1 шт), название (1 шт.), название (6 шт), название (6 шт)
+                  menu
+                    a.inc(href="#")
+                    span
+                      b 1
+                      | шт
+                    a.dec(href="#")
+                  p.price 
+                    b 32.5
+                    |  грн
+                  a.remove(href="#")
+
+        footer
+          .delivery.free.locked Доставка бесплатно!
+          .delivery.fee Стоимость доставки - 
+            span.delivery-price 50 грн
+            b (мы делаем бесплатную доставку когда сумма вашего заказа превысит 300 грн)
+          .price Сумма заказа - 
+            span 
+              b 1032 
+              |  грн
+          nav
+            a.order(href="#") Оформить заказ
+
+
+      footer
+        .wrapper
+          nav
+            a(href="#") Каталог
+            a(href="#") О бренде
+            a.card(href="#") Корзина 
+          
+          address
+            p.tel тел. 
+              a(href="tel: +380445160045") (044) 516 00 45
+            p.tel моб. 
+              a(href="tel: +380671348798") 067 134 87 98
+            p.email
+              a(href="mailto: yamy@carusel.com.ua") yamy@carusel.com.ua
+            p.adr г. Киев ул. Уличная 23, оф. 234
+            section.map#footer-map(data-lng="50.450097", data-lat="30.523397")
+          
+          .social
+            | Давай с нами – 
+            a.fb(href="#")
+            a.tw(href="#")
+          
+          a(href="http://territory.com.ua/")
+            p.developed-by CBT
+
+          p.copyright © 2010-2013
+            br
+            | Кондитерский дом «карусель»
+
+    template#popup-template
+      .popup
+        h2.popup-title девять жизней
+        p.popup-message Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. 
+        nav.popup-navigation
+          a.decline(href="#") НЕТ
+          a.agree(href="#") ДА
+          a.cancel(href="#") 
+
+      .lightbox
+
+    script(src="http://api-maps.yandex.ru/2.1/?lang=ru_RU")
+    script(src="js/requirejs/require.js", data-main="js/carrousel.js")

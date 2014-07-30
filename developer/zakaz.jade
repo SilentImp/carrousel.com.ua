@@ -1,0 +1,105 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="author", content="Anton Nemtsev, @silentimp, skype: ravencry")
+    link(rel="stylesheet", href="css/styles.css")
+    title Заказ | Carrousel
+  body
+    
+    header
+      a(href="/")
+        h1.logotype Carrousel
+      nav
+        a.catalog(href="catalog.html") Каталог
+        a.brand(href="about.html") О бренде
+        a.contacts(href="contacts.html") Контакты
+        a.card.selested(href="busket.html") Корзина
+          b (хочу сладкого)
+        a.fb(href="#") facebook
+
+    .main
+      
+      form.order(action="/order/", method="post")
+        header
+          h2.order-title Собери свою коробку
+          p.order-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan id orci at ornare. 
+        section
+          fieldset
+            input(required="required", type="text", name="name", placeholder="Имя")
+            input.tel(required="required", type="text", name="tel", placeholder="Телефон")
+            input(required="required", type="text", name="adr", placeholder="Адрес")
+            input(required="required", type="email", name="email", placeholder="E-mail")
+            .pseudo-select
+              input.pseudo-select-input(type="hidden", name="delivery")
+              .pseudo-select-current Выберите способ доставки
+              ul.pseudo-select-list
+                li(data-id="1", data-price="0") Самовывоз из магазина
+                li(data-id="2", data-price="50") Доставка курьером по адресу (50 грн)
+
+
+          fieldset
+            textarea(name="details", cols="30", rows="10", placeholder="Дополнительная информация")
+            .pseudo-select
+              input.pseudo-select-input(type="hidden", name="payment")
+              .pseudo-select-current Выберите cпособ оплаты
+              ul.pseudo-select-list
+                li(data-id="1") Деньгами
+                li(data-id="2") Натурой
+                li(data-id="1") Деньгами
+                li(data-id="2") Натурой
+                li(data-id="1") Деньгами
+                li(data-id="2") Натурой
+                li(data-id="1") Деньгами
+                li(data-id="2") Натурой
+                li(data-id="1") Деньгами
+                li(data-id="2") Натурой
+                li(data-id="1") Деньгами
+                li(data-id="2") Натурой
+                li(data-id="1") Деньгами
+                li(data-id="2") Натурой
+                li(data-id="1") Деньгами
+                li(data-id="2") Натурой
+                li(data-id="1") Деньгами
+                li(data-id="2") Натурой
+        footer
+          .price Сумма заказа - 
+            span 
+              b 240 
+              |  грн
+          nav
+            button.order(type="submit") Оформить заказ
+
+      footer
+        .wrapper
+          nav
+            a(href="#") Каталог
+            a(href="#") О бренде
+            a.card(href="#") Корзина 
+          
+          address
+            p.tel тел. 
+              a(href="tel: +380445160045") (044) 516 00 45
+            p.tel моб. 
+              a(href="tel: +380671348798") 067 134 87 98
+            p.email
+              a(href="mailto: yamy@carusel.com.ua") yamy@carusel.com.ua
+            p.adr г. Киев ул. Уличная 23, оф. 234
+            section.map#footer-map(data-lng="50.450097", data-lat="30.523397")
+          
+          .social
+            | Давай с нами – 
+            a.fb(href="#")
+            a.tw(href="#")
+          
+          a(href="http://territory.com.ua/")
+            p.developed-by CBT
+
+          p.copyright © 2010-2013
+            br
+            | Кондитерский дом «карусель»
+
+    script(src="http://api-maps.yandex.ru/2.1/?lang=ru_RU")
+    script(src="js/requirejs/require.js", data-main="js/carrousel.js")

@@ -1,0 +1,86 @@
+$green = #1ba694
+$green-hover = #8dd2c9
+
+icon()
+  margin auto
+  font-family "fontello"
+  font-style normal
+  font-weight normal
+  speak none
+  display inline-block
+  text-decoration inherit
+  text-align center
+  font-variant normal
+  text-transform none
+  -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
+
+clearit()
+  &:after
+    content "."
+    font-size 0
+    line-height 0
+    height 0
+    clear both
+    display block
+    overflow hidden
+    text-indent -9999px
+    
+sqr-button-green()
+  padding 0 15px
+  background-color $green
+  color #FFF
+  font-size 13px
+  line-height 30px
+  height 30px
+  display inline-block
+  text-decoration none
+  font-family "Minion Pro", Georgia, serif
+  zoom 1
+  transform translateZ(0)
+  &:hover
+    background-color $green-hover
+
+sqr-button()
+  padding 0 14px
+  border 1px solid #000
+  background-color #000
+  color #FFF
+  font-size 13px
+  line-height 28px
+  height 28px
+  display inline-block
+  text-decoration none
+  font-family "Minion Pro", Georgia, serif 
+  zoom 1    
+  transform translateZ(0)
+  &:hover
+    background-color #EBEBEB
+    color #000
+  &.selected
+    cursor default
+    pointer-events none
+  &.selected,
+  &:active 
+    color #000
+    background-color #fff    
+    
+round-button()
+  padding 0 29px
+  border 1px solid #000
+  background-color #000
+  color #FFF
+  font-size 13px
+  line-height 28px
+  height 28px
+  display inline-block
+  border-radius 15px
+  text-decoration none
+  font-family "Minion Pro", Georgia, serif  
+  zoom 1
+  transform translateZ(0)
+  &:hover
+    background-color #EBEBEB
+    color #000  
+  &:active 
+    background-color #fff

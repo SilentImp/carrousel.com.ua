@@ -1,0 +1,166 @@
+@require 'mixins'
+
+
+body>.main>footer,
+body>main>footer
+  color #FFF 
+  position absolute
+  bottom 0
+  left 0
+  right 0
+  width 100%
+  background-color #000
+  font-family "GothamPro", Helvetica, Arial, sans-serif
+  font-size 12px
+  line-height 18px
+  z-index 50
+  height 413px
+  box-sizing border-box
+  a
+    color #FFF
+    text-decoration none
+  .wrapper
+    height 300px
+    max-width 543px
+    margin 0 auto
+    padding 53px 482px 60px 20px
+    position relative 
+    zoom 1      
+    .social
+      position absolute
+      right 76px
+      width 386px
+      top 324px
+      a
+        margin-right 8px
+        border-radius 100%
+        height 21px
+        width 21px
+        background-color $green
+        background-position 50% 50%
+        background-repeat no-repeat 
+        color #fff
+        overflow hidden
+        text-align center
+        display inline-block
+        line-height 21px
+        vertical-align middle
+        font-size 10px
+        &.fb:before
+          font-family: "fontello";
+          font-style: normal;
+          font-weight: normal;
+          speak: none;
+          content '\e810'
+          color #fff
+          
+        &.tw:before
+          font-family: "fontello";
+          font-style: normal;
+          font-weight: normal;
+          speak: none;
+          content '\e80f'
+          color #fff
+          
+    .developed-by
+      overflow hidden
+      text-indent -999px
+      position absolute
+      right 20px
+      top 324px
+      height 18px
+      width 56px
+      background url("../svg/developed-by.svg") 100% 50% no-repeat
+      background-size auto 100%
+    .copyright
+      clear both
+      margin-top 20px
+      text-transform uppercase
+    address
+      margin-bottom 75px
+      clearit()
+      .email
+        margin 9px 0 
+      a
+        &:hover 
+          text-decoration underline
+      p
+        clear left
+    nav
+      margin-bottom 75px
+      a
+        white-space nowrap
+        text-decoration underline
+        margin-right 64px
+        &.card:before
+          icon()
+          text-decoration none
+          font-family: "fontello";
+          font-style: normal;
+          font-weight: normal;
+          speak: none;
+          content '\e80c'
+          width 18px
+          height 18px
+          display inline-block
+          color #fff 
+          vertical-align middle
+          margin-right 5px
+        &:hover
+          text-decoration none 
+    .map
+      position absolute
+      right 20px
+      top 58px
+      width 442px
+      height 235px
+      
+
+@media (max-width: 800px)
+  body>.main>footer
+    height auto
+    position relative
+    width 100%
+    .wrapper
+      height auto
+      position static
+      padding 53px 0 60px
+      width auto
+      max-width none
+      min-height 0
+      nav
+        margin 0 0 20px 20px
+        float right
+      .copyright
+        margin-left 20px
+      .social
+        position static
+        float left
+        margin-left 20px
+      .developed-by
+        margin-right 20px
+        float right
+        position static
+      address
+        margin-bottom 20px
+        width 100%
+        p
+          padding-left 20px
+        .map
+          width 100%
+          margin-top 20px
+          position relative
+          top 0
+          right 0
+          
+@media (max-width: 600px)
+  body>.main>footer 
+    height auto
+    .wrapper 
+      height auto
+      nav
+        float none
+        text-align center
+        padding-bottom 20px
+        a
+          margin 0 30px 

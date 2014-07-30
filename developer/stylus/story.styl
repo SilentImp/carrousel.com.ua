@@ -1,0 +1,48 @@
+@require 'mixins'
+
+.story
+  position relative
+  height 466px
+  line-height 466px
+  text-align center
+  .message
+    position relative
+    display inline-block
+    vertical-align middle
+    width 730px
+    padding 38px 75px 32px
+    .details
+      round-button()
+      margin-top 20px
+      &:before
+        icon()
+        content '\e805'
+        margin-right 5px
+    .message-title
+      margin-bottom 15px
+      
+
+@media (min-width: 681px)
+  section.story
+    min-height 466px
+    background url("../images/bg/goddness.jpg") 50% 50% no-repeat
+    background-size cover
+    
+@media (max-width: 680px)
+  section.story
+    background none
+    height auto
+    line-height inherit 
+    .message
+      width auto
+      padding 0 20px
+      border-style none
+      margin 20px 0 
+      transform none
+      position static
+      text-align left
+      .message-title
+        text-align left
+        white-space normal
+      .message-text
+        text-align left
