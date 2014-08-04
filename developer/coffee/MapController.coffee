@@ -1,11 +1,20 @@
-define [], ()->
+define [
+    'viewport-units-buggyfill/viewport-units-buggyfill'
+  ], (
+    buggyfill
+  )->
 
   class MapController
     constructor: ()->
+
+      buggyfill.init()
       
       @itype = 'click'
       if $('html').hasClass 'touch'
         @itype = 'touchstart'
+
+      if !!navigator.userAgent.match(/i(Pad|Phone|Pod).+(Version\/7\.\d+ Mobile)/i)
+        $('.yammy-map .map').css('height', window.innerHeight * 0.9);
 
       @footerMap = null
 

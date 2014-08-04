@@ -1,5 +1,22 @@
 @require 'mixins'
 
+html.linux,
+html.mac
+  body
+    a.scroll-to-the-box
+      &:before
+        smooth-icon()
+  body>header
+    nav
+      a
+        &.card
+          &:before
+            smooth-icon()
+        &.fb
+          &:before
+            smooth-icon()
+
+
 body
   a.scroll-to-the-box
     text-decoration none
@@ -166,7 +183,7 @@ body>header
           
       b
         position absolute
-        font-size 10px
+        font-size 9px
         line-height 12px
         white-space nowrap
         color #C0C0C0
@@ -178,6 +195,8 @@ body>header
     a.scroll-to-the-box
       display none
   body>header
+    max-width 100%
+    overflow-x hidden
     .logotype
       position relative
       width auto
@@ -200,7 +219,8 @@ body>header
         text-align center
         display inline-block
         float none
-        margin 0 10px
+        font-size 11px
+        margin 0 5px
         left 0
         right 0
         position relative

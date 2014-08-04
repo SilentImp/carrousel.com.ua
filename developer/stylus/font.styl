@@ -53,8 +53,17 @@
   font-weight:  400;
 }
 
+html.linux [class^="icon-"]:before, 
+html.linux [class*=" icon-"]:before,
+html.mac [class^="icon-"]:before, 
+html.mac [class*=" icon-"]:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+
+[class^="icon-"]:before, 
+[class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
@@ -69,8 +78,6 @@
   text-transform: none;
   line-height: 1em;
   margin-left: .2em;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 }
  
 .icon-box_small:before { content: '\e800'; } /* '' */

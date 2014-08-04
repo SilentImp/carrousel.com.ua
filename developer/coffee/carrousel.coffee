@@ -1,6 +1,7 @@
 requirejs [
     "modernizr/modernizr",
     "jquery/jquery.min",
+    "css_browser_selector/css_browser_selector.min"
     "BGSlider",
     "MapController",
     "ItemSliderController",
@@ -14,6 +15,7 @@ requirejs [
   ], (
     dummy1, 
     dummy2,
+    dummy3,
     BGSlider,
     MapController,
     ItemSliderController,

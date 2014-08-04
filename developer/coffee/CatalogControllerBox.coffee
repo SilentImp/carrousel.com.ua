@@ -35,8 +35,8 @@ define [
       @animatedCookies = 0
 
       @card = $ 'body>header>nav>.card b'
-
-      $(document).on @itype, '.catalog .item .details, .catalog .item img, .catalog .item .wrapper', @switchState
+      $(document).on @itype, '.catalog .item img, .catalog .item .wrapper', @showDetails
+      $(document).on @itype, '.catalog .item .details', @switchState
       $(document).on @itype, '.catalog .item .buy', @buyItem
 
       @totop = $ '.scroll-to-the-box'
@@ -113,7 +113,7 @@ define [
         left += element.offsetLeft
         element = element.parentNode
 
-      top += item.height()/2
+      top += item.height()*0.75
       left += item.width()/2
 
       img = new Image
@@ -146,15 +146,43 @@ define [
             $(document.body).removeClass 'cookie-animation'
         , 2000
 
+    showDetails: (event)=>
+      link = $ event.currentTarget
+      item = link.closest '.item'
+      
+      if item.hasClass('full-view') || @items.hasClass('not-masonry')
+        return
+
+      @widget.find('.full-view').removeClass 'full-view'
+      item.addClass 'full-view'
+
+      if history.pushState
+        history.pushState null, null, '#'+item.attr('data-hash')
+      else
+        document.location.hash = '#'+item.attr('data-hash')
+
+      if @msnry != null
+        @msnry.layout()
+
     switchState: (event)=>
       event.preventDefault()
       link = $ event.currentTarget
       item = link.closest '.item'
       if !item.hasClass 'full-view'
         @widget.find('.full-view').removeClass 'full-view'
-      item.toggleClass 'full-view'
+        item.addClass 'full-view'
+        if history.pushState
+          history.pushState null, null, '#'+item.attr('data-hash')
+        else
+          document.location.hash = '#'+item.attr('data-hash')
+      else
+        item.removeClass 'full-view'
+        if history.pushState
+          history.pushState "", document.title, window.location.pathname
       if @msnry != null
         @msnry.layout()
+
+      
 
   return CatalogControllerBox
 

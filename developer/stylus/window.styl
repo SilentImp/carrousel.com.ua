@@ -1,5 +1,12 @@
 @require 'mixins'
 
+html.linux,
+html.mac
+  .window
+    .message
+      .buy
+        &:before
+          smooth-icon()
 .window
   position relative
   height 569px
@@ -10,7 +17,6 @@
     display inline-block
     vertical-align middle
     width 529px
-    // transform translate(-50%,-50%)
     padding 38px 65px 34px
     img
       position absolute

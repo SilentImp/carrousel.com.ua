@@ -1,5 +1,17 @@
 @require 'mixins'
 
+html.linux,
+html.mac
+  .order
+    footer
+      .price
+        &:before
+          smooth-icon()
+      nav
+        .order
+          &:before
+            smooth-icon()
+
 .order
   max-width 1000px
   margin auto

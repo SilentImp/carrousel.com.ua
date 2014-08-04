@@ -1,6 +1,32 @@
 @require 'mixins'
 @require 'item'
 
+html.linux,
+html.mac
+  .main>section.catalog
+    &.custom-candy
+      .box-wrapper
+        .box
+          .box-container
+            .icons
+              .title
+                &:before
+                  smooth-icon()
+    .box-wrapper
+      .box 
+        .box-container
+          .icons
+            .icon    
+              &.loaded
+                &:before
+                  smooth-icon()
+    header
+      .type-navigation
+        a
+          &:before
+            smooth-icon()
+
+
 body.cookie-animation
   perspective 800px
   transform-style preserve-3d
@@ -117,6 +143,10 @@ body
             background-size 16px 16px
             position relative
             text-align center
+            pointer-events none
+            &.loaded,
+            &.loading
+              pointer-events all
             &.loaded:hover 
               .hint
                 display block
@@ -511,19 +541,30 @@ body
         
 @media (max-width: 650px)
   .main>section.catalog
-      
+    .paginator
+      margin 0
     header
       .type-navigation
         a 
           padding-left 0
-          margin 0 10px 
+          margin 0 5px 
           &:before
             display none
     .box-wrapper
-      .box .box-container 
-        footer
-          .price
-            margin 0 0 20px 
-            display block
-            position relative
-            
+      .box 
+        .box-type
+          padding 0 5px
+          a:before
+            display none
+        .box-container 
+          .icons.big
+            .icon
+              margin 10px 5px
+              width 50px
+              height 30px 
+          footer
+            .price
+              margin 0 0 20px 
+              display block
+              position relative
+              

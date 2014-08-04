@@ -1,5 +1,14 @@
 @require 'mixins'
 
+html.linux,
+html.mac
+  body>.main>footer,
+  body>main>footer
+    .wrapper
+      nav
+        a
+          &.card:before
+            smooth-icon()
 
 body>.main>footer,
 body>main>footer
@@ -16,6 +25,7 @@ body>main>footer
   z-index 50
   height 413px
   box-sizing border-box
+  overflow-x hidden
   a
     color #FFF
     text-decoration none
@@ -160,7 +170,7 @@ body>main>footer
       height auto
       nav
         float none
-        text-align center
+        text-align left
         padding-bottom 20px
         a
-          margin 0 30px 
+          margin 0 10px  0 0

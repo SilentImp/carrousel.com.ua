@@ -48,7 +48,7 @@ define [
       if(items.length>0)
         @card.text "("+items.length+")"
       else
-        @card.text "(хочу сладкого)"
+        @card.text "(хочу)"
       for item in items
         item = $ item
         

@@ -1,5 +1,33 @@
 @require 'mixins'
 
+html.linux,
+html.mac
+  .basket
+    header,
+    footer 
+      .delivery
+        &:before
+          smooth-icon()
+      .price
+        &:before
+          smooth-icon()
+      nav
+        .order
+          &:before
+            smooth-icon()
+    .items
+      .item                
+        .details
+          .secondary              
+            menu
+              .inc:before
+                smooth-icon()
+              .dec:before
+                smooth-icon()
+            .remove
+              &:before
+                smooth-icon()
+
 
 .basket
   max-width 1000px
@@ -229,12 +257,10 @@
               icon()
               content '\e80d'
               font-size 16px
-              // background url("../svg/add.svg") 50% 50% no-repeat
             .dec:before
               icon()
               content '\e801'
               font-size 16px
-              // background url("../svg/remove.svg") 50% 50% no-repeat
           .remove
             font-size 0
             line-height 0
@@ -248,10 +274,9 @@
             left 100%
             text-decoration none
             margin-bottom -6px
+            margin-left -25px
             &:hover
               color #000 
-            
-            // background url("../svg/delete.svg") 50% 50% no-repeat
             border-radius 100% 
             &:before
               icon()
@@ -280,6 +305,22 @@
     
 @media (max-width: 800px)
   .basket 
+    header,
+    footer
+      .price
+        float none
+      .delivery
+        b
+          display block
+          vertical-align baseline
+          line-height 18px
+          font-size 11px
+          margin-top 18px
+      nav 
+        .order
+          float none
+          margin-bottom 18px
+         
     .items
       .item
         margin-bottom 64px
@@ -303,6 +344,11 @@
       menu
         width 30%
         margin-left -100%
+        span
+          white-space nowrap
+          width auto
+          padding 0 5px
+           
       .price
         width 50%
         margin-left -55%

@@ -1,5 +1,14 @@
 @require 'mixins'
 
+html.linux,
+html.mac
+  .popup
+    .popup-navigation
+      a
+        &.cancel
+          &:before
+            smooth-icon()
+
 .lightbox
   position fixed
   top 0
