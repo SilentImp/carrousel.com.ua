@@ -10,12 +10,17 @@ concat      = require 'gulp-concat'
 uglify      = require 'gulp-uglify'
 min         = require 'gulp-htmlmin'
 
+find        = require 'find'
+path        = require 'path'
+ghpages     = require 'gh-pages'
+
 dev_path =
   jade:   'developer/*.jade'
   images: 'developer/images/**'
   coffee: 'developer/coffee/**.coffee'
   js:     'developer/coffee/**.js'
   stylus: 'developer/stylus/**'
+  list:   'developer/list.jade'
 
 prod_path =
   html:   'production/'
@@ -23,8 +28,16 @@ prod_path =
   js:     'production/js/'
   css:    'production/css/'
 
+
 handleError = (err)->
-  console.log err.toString()
+  console.log([
+      '',
+      "----------ERROR MESSAGE START----------",
+      ("[" + error.name + " in " + error.plugin + "]"),
+      error.message,
+      "----------ERROR MESSAGE END----------",
+      ''
+  ].join('\n'));
   this.emit 'end'
 
 gulp.task('html', ()->
@@ -68,6 +81,35 @@ gulp.task('images', ()->
     .pipe(imagemin())
     .pipe(gulp.dest(prod_path.images))
     .on('error', handleError)
+)
+
+gulp.task('deploy', ->
+  ghpages.publish(path.join(__dirname, 'production'), {
+      repo: 'git@github.com:SilentImp/carrousel.com.ua.git',
+      branch: 'gh-pages'
+    }, (err)->
+      if err
+        console.log 'Error: ', err
+      else
+        console.log 'Published!'
+  )
+)
+
+gulp.task('list', ->
+
+  find.file(/\.html$/, './production/', (files)->
+    names = []
+    for file in files
+      if file.substr(file.lastIndexOf('production/')+'production/'.length).lastIndexOf('/') > -1
+        continue
+      names.push path.basename(file)
+
+    gulp.src(dev_path.list)
+      .pipe(jade({
+        locals: {'pages': names}
+        })).on('error', handleError)
+      .pipe(gulp.dest('production/'))
+  )
 )
 
 gulp.task('watch', ()->

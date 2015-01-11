@@ -9,6 +9,9 @@
   "author": "Anton Nemtsev",
   "license": "ISC",
   "devDependencies": {
+    "find": "~0.1.7",
+    "path": "~0.11.14",
+    "gh-pages": "~0.2.0",
     "gulp": "~3.6.2",
     "gulp-coffee": "~1.4.2",
     "gulp-order": "~1.0.6",
